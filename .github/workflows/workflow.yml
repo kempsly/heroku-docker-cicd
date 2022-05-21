@@ -22,7 +22,8 @@ jobs:
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
-    - name: Check
+    - name: Health check
+    - uses: suhas-ds/heroku-docker-cicd@master
       with:
         healthcheck: "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health"
         checkstring: "ok" 
