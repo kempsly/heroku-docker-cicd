@@ -50,6 +50,10 @@ class LoanPred(BaseModel):
 def index():
     return {'message': 'Loan Prediction App'}
 
+@app.get('/health')
+def healthcheck():
+    return {"status":"ok"}
+
 #defining the function which will make the prediction using the data which the user inputs 
 @app.post('/predict_status')
 def predict_loan_status(loan_details: LoanPred):
@@ -115,5 +119,7 @@ def get_loan_details(Gender: str, Married: str, Dependents: str,
 # # def not_found(error):
 # #     return "404: Page not found",404
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
+	pass
+
 # 	uvicorn.run(app, host='0.0.0.0', port=port)
