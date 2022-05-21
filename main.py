@@ -52,7 +52,7 @@ def index():
 
 @app.get('/health')
 def healthcheck():
-    return {"status":"ok"}
+    return {'status':'ok'}
 
 #defining the function which will make the prediction using the data which the user inputs 
 @app.post('/predict_status')
