@@ -24,6 +24,8 @@ jobs:
       run: heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
     - name: Health check
       uses: suhas-ds/heroku-docker-cicd@master
+      run: chmod +x start.sh
       with:
         healthcheck: "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health"
-        checkstring: "ok" 
+        checkstring: "ok"
+        delay: 5
