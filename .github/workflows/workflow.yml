@@ -28,5 +28,5 @@ jobs:
       uses: suhas-ds/heroku-docker-cicd@master
       with:
         delay: 5
-        healthcheck: "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health"
+        healthcheck: "https://docker-ml-cicd.herokuapp.com/health"
         checkstring: "{'status':'ok'}"
