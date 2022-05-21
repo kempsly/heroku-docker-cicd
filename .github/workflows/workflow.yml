@@ -30,4 +30,3 @@ jobs:
         delay: 5
         healthcheck: "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health"
         checkstring: "{'status':'ok'}"
-        delay: 5
