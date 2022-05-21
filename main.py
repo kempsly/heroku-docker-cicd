@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
 import pickle
+import os
 import numpy as np
 import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
@@ -29,6 +30,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 	)
+
+# port = int(os.environ.get("PORT", 8000))
 
 class LoanPred(BaseModel):
 	Gender: str
@@ -104,13 +107,13 @@ def get_loan_details(Gender: str, Married: str, Dependents: str,
 
 	return {'status':pred}
 
-# @app.errorhandler(500)
-# def internal_error(error):
-#     return "500: Something went wrong"
+# # @app.errorhandler(500)
+# # def internal_error(error):
+# #     return "500: Something went wrong"
 
-# @app.errorhandler(404)
-# def not_found(error):
-#     return "404: Page not found",404
+# # @app.errorhandler(404)
+# # def not_found(error):
+# #     return "404: Page not found",404
 
-if __name__ == '__main__':
-	uvicorn.run(app)
+# if __name__ == '__main__':
+# 	uvicorn.run(app, host='0.0.0.0', port=port)

@@ -7,7 +7,7 @@ import json
 # warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
 
-# from .main import app
+# from .app import app
 
 client = TestClient(app)
 

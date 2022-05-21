@@ -8,6 +8,7 @@ sklearn==0.0
 
 # testing requirements
 pytest<5.0.0,>=4.6.6
+requests
 
 # packaging
 setuptools==40.6.3
