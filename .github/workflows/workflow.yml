@@ -23,7 +23,6 @@ jobs:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
     - name: Health check
-      uses: suhas-ds/heroku-docker-cicd@master
       run: chmod +x start.sh
       with:
         healthcheck: "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health"
