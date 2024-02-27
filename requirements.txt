@@ -1,6 +1,7 @@
 # model building requirements
 joblib==0.16.0
 numpy==1.19.0
+# numpy==1.20.3
 pandas==1.0.5
 scikit-learn==0.23.1
 scipy==1.5.1
